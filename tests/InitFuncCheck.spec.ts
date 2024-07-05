@@ -20,7 +20,7 @@ describe('InitFuncCheck', () => {
         const deployResult = await initFuncCheck.send(
             deployer.getSender(),
             {
-                value: toNano('0.05'),
+                value: toNano('0.5'),
             },
             {
                 $$type: 'Deploy',
@@ -39,6 +39,8 @@ describe('InitFuncCheck', () => {
             from: initFuncCheck.address,
             to: receiver,
         });
+
+        console.log(deployResult.events);
     });
 
     it('should deploy', async () => {
